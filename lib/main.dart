@@ -2,13 +2,14 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_project/firebase_options.dart';
 import 'package:firebase_project/signup_page.dart';
 import 'package:flutter/material.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(const MyApp());
+  runApp(DevicePreview(builder: (context) => MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Task Management ',
       theme: ThemeData(
         elevatedButtonTheme: ElevatedButtonThemeData(

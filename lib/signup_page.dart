@@ -1,3 +1,4 @@
+import 'package:firebase_project/login_page.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
@@ -32,6 +33,58 @@ class _SignupPageState extends State<SignupPage> {
               Text(
                 'Sign Up.',
                 style: TextStyle(fontSize: 50, fontWeight: FontWeight.bold),
+              ),
+              const SizedBox(
+                height: 10,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              TextFormField(
+                controller: emailControler,
+                decoration: const InputDecoration(
+                  hintText: "Email",
+                ),
+              ),
+              const SizedBox(
+                height: 15,
+              ),
+              TextFormField(
+                controller: passwordController,
+                decoration: const InputDecoration(
+                  hintText: "password",
+                ),
+                obscureText: true,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              ElevatedButton(
+                  onPressed: () {},
+                  child: const Text(
+                    "SIGN UP",
+                    style: TextStyle(fontSize: 16, color: Colors.white),
+                  )),
+              const SizedBox(
+                height: 20,
+              ),
+              GestureDetector(
+                onTap: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
+                },
+                child: RichText(
+                    text: TextSpan(
+                        text: "Already have an account?",
+                        style: Theme.of(context).textTheme.titleMedium,
+                        children: [
+                      TextSpan(
+                          text: 'Sign In',
+                          style:
+                              Theme.of(context).textTheme.titleMedium?.copyWith(
+                                    fontWeight: FontWeight.bold,
+                                  ))
+                    ])),
               )
             ],
           ),
