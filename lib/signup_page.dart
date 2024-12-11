@@ -22,14 +22,6 @@ class _SignupPageState extends State<SignupPage> {
     super.dispose();
   }
 
-  Future<void> createUserWithemailandpassword() async {
-    final UserCredential = await FirebaseAuth.instance
-        .createUserWithEmailAndPassword(
-            email: emailControler.text.trim(),
-            password: passwordController.text.trim());
-    print(UserCredential);
-  }
-
   Widget build(BuildContext context) {
     return Scaffold(
       body: Padding(
@@ -69,9 +61,7 @@ class _SignupPageState extends State<SignupPage> {
                 height: 20,
               ),
               ElevatedButton(
-                  onPressed: () async {
-                    await createUserWithemailandpassword();
-                  },
+                  onPressed: () {},
                   child: const Text(
                     "SIGN UP",
                     style: TextStyle(fontSize: 16, color: Colors.white),
